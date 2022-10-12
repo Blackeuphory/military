@@ -19,5 +19,10 @@ from military import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('unit_type/', views.AddUnitTypeView.as_view())
+    path('unit_type/', views.AddUnitTypeView.as_view()),
+    path('add_weapon/', views.AddWeaponView.as_view()),
+    path('add_crew/', views.AddCrewView.as_view()),
+    path('add_vehicle/', views.AddVehicleView.as_view()),
+    path('add_unit/', views.AddUnitView.as_view()),
+    path('', views.IndexView.as_view())
 ]

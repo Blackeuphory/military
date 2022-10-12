@@ -5,3 +5,4 @@ admin.site.register(UnitType),
 admin.site.register(Crew),
 admin.site.register(Weapon),
 admin.site.register(Vehicle)
+admin.site.register(Unit)

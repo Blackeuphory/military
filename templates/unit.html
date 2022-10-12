@@ -10,13 +10,15 @@
 </head>
 <body>
 {% include 'navbar.html' %}
-<form method="post">
-    {% csrf_token %}
-    <p>
-        <input type="text" name="unit" placeholder="Rodzaj jednostki">
-    </p>
-    <p><input type="submit"></p>
-</form>
+<div class="card w-25">
+        <div class="card-body">
+            <form method="post" class="form ">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit">
+            </form>
+        </div>
+    </div>
 {{ message }}
 </body>
 </html>
