@@ -24,5 +24,9 @@ urlpatterns = [
     path('add_crew/', views.AddCrewView.as_view()),
     path('add_vehicle/', views.AddVehicleView.as_view()),
     path('add_unit/', views.AddUnitView.as_view()),
-    path('', views.IndexView.as_view())
+    path('', views.IndexView.as_view()),
+    path('show_unit/', views.ShowUnitView.as_view()),
+    path('show_weapon/', views.ShowWeaponView.as_view()),
+    path('show_vehicle/', views.ShowVehicleView.as_view()),
+    path('show_type/', views.ShowTypeView.as_view())
 ]

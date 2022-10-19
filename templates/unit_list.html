@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'style.html' %}
+
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>type</th>
+            <th>parent</th>
+            <th>crew</th>
+            <th>weapon</th>
+            <th>vehicle</th>
+        </tr>
+        {% for unit in units %}
+            <tr class="{% cycle 'table-light' 'table-secondary' %}">
+
+                <td>{{ forloop.counter }}</td>
+                <td>{{ unit.name }}</td>
+                <td>{{ unit.type }}</td>
+                <td>{{ unit.parent }}</td>
+                <td>
+                    <ul>{% for c in unit.crew.all %}
+                        <li>{{ c.name }}</li>{% endfor %}</ul>
+                </td>
+                <td><ul>{% for x in unit.weapon.all %}
+                    <li>{{ x.name }}</li>{% endfor %}</ul></td>
+
+                <td>{% for a in unit.vehicle.all %}<li>{{ a.name }}</li>{% endfor %}</td>
+
+            </tr>{% empty %}
+            <tr>
+                <td colspan="7">brak jednostek</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

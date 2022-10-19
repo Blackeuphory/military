@@ -56,9 +56,27 @@ class AddUnitView(View):
         form=UnitCreateForm()
         return render(request, 'unit.html', {'form':form})
     def post(self,request):
-        form= UnitCreateForm()
+        form= UnitCreateForm(request.POST)
 
         if form.is_valid():
             form.save()
-            return redirect('Jednostka dodana')
-        return render(request, 'unit.html')
+
+        return render(request, 'unit.html', {'form': form, 'message':'Jednostka dodana'})
+
+class ShowUnitView(View):
+    def get(self,request):
+        units=Unit.objects.all()
+        return render(request,'unit_list.html', {'units':units})
+
+class ShowWeaponView(View):
+    def get(self,request):
+        weapons=Weapon.objects.all()
+        return render(request, 'weapons_list.html', {'weapons':weapons})
+class ShowVehicleView(View):
+    def get(self,request):
+        vehicles=Vehicle.objects.all()
+        return render(request, 'vehicles_list.html', {'vehicles':vehicles})
+class ShowTypeView(View):
+    def get(self,request):
+        types=UnitType.objects.all()
+        return  render(request, 'type.html', {'types':types})

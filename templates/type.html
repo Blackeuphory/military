@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'style.html' %}
+
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>name</th>
+        </tr>
+        {% for type in types %}
+            <tr class="{% cycle 'table-light' 'table-secondary'%}">
+
+                <td>{{ forloop.counter }}</td>
+                <td>{{ type.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
