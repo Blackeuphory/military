@@ -12,8 +12,8 @@ class AddUnitTypeView(View):
         unit_type=UnitType.objects.all().order_by('name')
         return render(request,'unit_type.html',{'unit_type':unit_type})
     def post(self,request):
-        name=request.POST['type']
-        ut=UnitType(name=name)
+        unit_type=request.POST['type']
+        ut=UnitType(name=unit_type)
         ut.save()
         return render(request,'unit_type.html',{'message':'rodzaj dodany'})
 
