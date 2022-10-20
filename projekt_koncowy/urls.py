@@ -1,4 +1,4 @@
-"""projekt_końcowy URL Configuration
+"""projekt_koncowy URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -20,13 +20,13 @@ from military import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('unit_type/', views.AddUnitTypeView.as_view()),
-    path('add_weapon/', views.AddWeaponView.as_view()),
-    path('add_crew/', views.AddCrewView.as_view()),
-    path('add_vehicle/', views.AddVehicleView.as_view()),
-    path('add_unit/', views.AddUnitView.as_view()),
+    path('add_weapon/', views.AddWeaponView.as_view(), name='weapon'),
+    path('add_crew/', views.AddCrewView.as_view(), name='crew'),
+    path('add_vehicle/', views.AddVehicleView.as_view(), name='vehicle' ),
+    path('add_unit/', views.AddUnitView.as_view(), name='unit'),
     path('', views.IndexView.as_view()),
-    path('show_unit/', views.ShowUnitView.as_view()),
-    path('show_weapon/', views.ShowWeaponView.as_view()),
-    path('show_vehicle/', views.ShowVehicleView.as_view()),
-    path('show_type/', views.ShowTypeView.as_view())
+    path('show_unit/', views.ShowUnitView.as_view(), name='show_unit'),
+    path('show_weapon/', views.ShowWeaponView.as_view(), name='show_weapon'),
+    path('show_vehicle/', views.ShowVehicleView.as_view(), name='show_vehicle'),
+    path('show_type/', views.ShowTypeView.as_view(), name='show_type')
 ]
