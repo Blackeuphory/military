@@ -7,6 +7,9 @@ class IndexView(View):
     def get(self,request):
         return render(request, 'base.html')
 
+    def post(self, request):
+        return render(request, 'base.html')
+
 class AddUnitTypeView(View):
     def get(self,request):
         unit_type=UnitType.objects.all().order_by('name')
